@@ -52,5 +52,6 @@ li {
     text-align: center;
     border: 1px solid red;
     border-radius: 5px;
+    overflow: hidden;
 }
 </style>

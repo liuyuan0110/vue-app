@@ -2,6 +2,10 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import Axios from 'axios'
+
+Vue.prototype.$axios = Axios
+Axios.defaults.baseURL = '/api'
 
 Vue.config.productionTip = false
 
