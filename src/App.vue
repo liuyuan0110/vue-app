@@ -1,28 +1,47 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+  <div id="tbody">
+    <div id="header">
+      <Header/>
+    </div>
+    <div id="view">
+      <IndexView ref="indexView"></IndexView>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Header from './components/Header'
+import IndexView from './components/IndexView'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    "Header": Header,
+    "IndexView": IndexView
+  },
+  methods: {
+    setFrameView: function (menuItem) {
+      debugger;
+      this.$refs.indexView.getView(menuItem);
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+#header {
+  height: 10%;
+  width: 100%;
+}
+#view {
+  height: 90%;
+  width: 100%;
+}
+#tbody {
+  height: 100%;
+  width: 100%;
+}
+html,body {
+  height: 100%;
 }
 </style>
